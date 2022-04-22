@@ -8,3 +8,20 @@
 - **goal_pos_x:** enter x position of the target
 - **goal_pos_y:** enter y position of the target
 - **obstacles:** number of obstacles
+
+## Expected Outputs:
+
+
+## Functionality of the Code
+
+
+## Thought Process
+
+
+## Flowchart
+
+
+## Supporting Files and Graphics
+
+
+## Further Improvement
