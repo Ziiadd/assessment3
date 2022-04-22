@@ -9,7 +9,7 @@
 - **goal_pos_y:** enter y position of the target
 - **obstacles:** number of obstacles
 
-## Expected Outputs:
+## Expected Outputs
 
 
 ## Functionality of the Code
