@@ -30,7 +30,7 @@ The code shows a simulation of robot placed on the map according to an input of 
 ## Results, Supporting Files and Graphics
 - **The robot navigates to the target choosen while avoiding any obstacle in its path to the target.**
 - ![This is our robot](robot.png.png)
-- ![This is our simulation](Robot Simulation.png)
+- ![This is our simulation](RobotSimulation.png)
 
 
 ## Further Improvement
