@@ -36,6 +36,7 @@ The robot navigates to the target choosen while avoiding any obstacle in its pat
 - **The robot needs to avoid many targets placed together more accurately**
 - **The robot needs to identify if there is any obstacles of the starting point and avoid it**
 - **The robot needs stay inside the grid** 
+- **Draw a line path for the robot where the line path avoids the obstacles and reachs the target**
 
 
 ## Code 
