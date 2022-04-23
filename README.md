@@ -169,7 +169,7 @@ def avoid(run):
                     elif((j[1] > (3*(pi/4))) and (j[1] > pi)):
                         veh.step(0.125, 3*(pi/3) - j[1])
                         step = False
-                    elif((j[1] < -pi/2) and (j[1] > (3*(pi/4)))):
+                    elif((j[1] < -pi/2) and (j[1] > (-3*(pi/4)))):
                         veh.step(0.125, pi/3 + j[1])
                         step = False
                     elif((j[1] < -(3*(pi/4))) and (j[1] > -pi)):
