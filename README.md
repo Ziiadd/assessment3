@@ -24,7 +24,7 @@ The code shows a simulation of robot placed on the map according to an input of 
 - **Visual studio code : 1.64.2**
 
 ## Thought Process
-An obstacle could be approached by the robot at different angles, so the robot needs to differently avoid these obstacles according to these angles. The follwoing image shows the thought process of implementing an obstacle avoiding code technique showing the different possible angles the robot may approach an obstacle with and  the steering angles it would have to take to avoidi.
+An obstacle could be approached by the robot at different angles, so the robot needs to differently avoid these obstacles according to these angles. The follwoing image shows the thought process of implementing an obstacle avoiding code technique showing the different possible angles the robot may approach an obstacle with and  the steering angles it would have to take to avoid it.
 
 ![Conditions of obstacles avoiding](Conditionsn_1.jpg)
 
