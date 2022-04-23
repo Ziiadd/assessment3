@@ -38,7 +38,8 @@ The robot navigates to the target choosen while avoiding any obstacle in its pat
 
 
 ## Code 
-`` #Importing libraries
+` 
+#Importing libraries
 import matplotlib.pyplot as plt  
 from roboticstoolbox import Bicycle, RandomPath, VehicleIcon, RangeBearingSensor, LandmarkMap
 from math import atan2, pi, cos, sin
@@ -214,4 +215,5 @@ coordinates([pos_x, pos_y], sensor.h(veh.x) )
     
 plt.pause(100)
 
-print(veh.x) ``
+print(veh.x)
+`
