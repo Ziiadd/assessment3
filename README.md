@@ -26,7 +26,7 @@ The code shows a simulation of robot placed on the map according to an input of 
 ## Thought Process
 An obstacle could be approached by the robot at different angles, so the robot needs to differently avoid these obstacles according to these angles. The follwoing image shows the thought process of implementing an obstacle avoiding code technique showing the different possible angles the robot may approach an obstacle with and  the steering angles it would have to take to avoidi.
 
-
+![Conditions of obstacles avoiding](conditions_1.png)
 
 
 ## Flowchart
@@ -48,9 +48,10 @@ An obstacle could be approached by the robot at different angles, so the robot n
 
 ## Code 
 ``` #Importing libraries
+from cmath import sqrt
 import matplotlib.pyplot as plt  
 from roboticstoolbox import Bicycle, RandomPath, VehicleIcon, RangeBearingSensor, LandmarkMap
-from math import atan2, pi, cos, sin
+from math import atan2, pi, cos, sin, sqrt
 
 
 #Initializing the position X of the robot
@@ -149,44 +150,64 @@ def coordinates(x, y):
     return final_coor
 
 
+#Measuring distance and angle between robot and target
+def target_dist_angle(x , y):
+    distance = sqrt(abs(y[0] - x[0])**2 + (abs(y[1] - x[1]))**2)
+    angle = atan2( (abs(y[1] - x[1])) , (abs(y[0] - x[0])) )
+    print('Distance between target and Robot = : {} '.format(distance))
+    print('Angle between target and Robot = : {} \n'.format(angle))
+
+
+#Steering function towards the target
+def steering(x, y):
+    goal_heading = atan2(    #Steering the robot towards the target goal
+    y[1] - x[1], 
+    y[0] - x[0]
+    )
+    Steer = goal_heading-veh.x[2]
+    return Steer
 
 #Obstacle avoiding function
 def avoid(run):   
-    goal_heading = atan2(    #Steering the robot towards the target goal
-    goal[1] - veh.x[1], 
-    goal[0] - veh.x[0]
-    )
-    steer = goal_heading-veh.x[2]     
+    steer = steering(veh.x, goal)     
     for i in sensor.h(veh.x):
-        if(i[0] < 4):
+        if(i[0] < 3.5):
             step = True   #Adding a condition to condition to exit the loop when needed
             while(step):            
                 for j in sensor.h(veh.x):      #Setting conditions to avoid obstacles according to the angles between them and the robot
+                    #Condition 1
                     if((j[1] > pi/4) and (j[1] < pi/2) ):  
-                        veh.step(0.125, pi/3 + j[1])
+                        veh.step(0.125, pi/4 + j[1])
                         step = False
+                    #Condition 2
                     elif((j[1] < pi/4) and (j[1] > 0)):
-                        veh.step(0.125, pi/3 - j[1])
+                        veh.step(0.125, -pi/4 + j[1])
                         step = False
+                    #Condition 3
                     elif((j[1] < (3*(pi/4))) and (j[1] > pi/2)):
-                        veh.step(0.125, -3*(pi/3) + j[1])
+                        veh.step(0.125, -pi/4 + j[1])
                         step = False
-                    elif((j[1] > (3*(pi/4))) and (j[1] > pi)):
-                        veh.step(0.125, 3*(pi/3) - j[1])
+                    #Condition 4
+                    elif((j[1] > (3*(pi/4))) and (j[1] < pi)):
+                        veh.step(0.125, pi/4 + j[1])
                         step = False
+                    #Condition 5
                     elif((j[1] < -pi/2) and (j[1] > (-3*(pi/4)))):
-                        veh.step(0.125, pi/3 + j[1])
+                        veh.step(0.125, pi/4 + j[1])
                         step = False
+                    #Condition 6
                     elif((j[1] < -(3*(pi/4))) and (j[1] > -pi)):
-                        veh.step(0.125, -pi/3 + j[0] )
+                        veh.step(0.125, -pi/4 + j[0] )
                         step = False
+                    #Condition 7
                     elif((j[1] > -pi/4 and (j[1] < 0 ))): 
-                        veh.step(0.125, pi/3 + j[1])     
+                        veh.step(0.125, pi/4 + j[1])     
                         step = False
-                    elif((j[1] < -pi/4) and (j[1] > -pi/4)):
-                        veh.step(0.125, -pi/3 + j[1])    
+                    #Condition 8
+                    elif((j[1] < -pi/4) and (j[1] > -pi/2)):
+                        veh.step(0.125, -pi/4 + j[1])    
                         step = False              
-
+                    
                 veh._animation.update(veh.x)
                 plt.pause(0.005)
                 break
@@ -201,19 +222,16 @@ run  = True   #Run condition to stop the robot when it reaches its goal
 
 
 while(run):
-    goal_heading = atan2(
-    goal[1] - veh.x[1], 
-    goal[0] - veh.x[0]
-    )
-    steer = goal_heading-veh.x[2]
-    if((abs(goal[0]-veh.x[0]) > 0.6) or (abs(goal[1]-veh.x[1]) > 0.6)):
+    steer = steering(veh.x, goal)
+    if((abs(goal[0]-veh.x[0]) > 0.6) or (abs(goal[1]-veh.x[1]) > 0.6)):   #Stopping condition
         run=True
     else:
         run=False
     avoid(run)
+    target_dist_angle(veh.x, goal)
 
 coordinates([pos_x, pos_y], sensor.h(veh.x) )
     
 plt.pause(100)
 
-print(veh.x) ```
+print(veh.x)```
