@@ -181,14 +181,7 @@ def avoid(run):
                     elif((j[1] < -pi/4) and (j[1] > -pi/4)):
                         veh.step(0.125, -pi/3 + j[1])    
                         step = False              
-                    else:
-                        goal_heading = atan2(
-                        goal[1] - veh.x[1], 
-                        goal[0] - veh.x[0]
-                        )
-                        steer = goal_heading-veh.x[2]
-                        veh.step(0.125,steer)
-                        step = False
+
                 veh._animation.update(veh.x)
                 plt.pause(0.005)
                 break
