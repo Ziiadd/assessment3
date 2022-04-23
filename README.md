@@ -34,7 +34,8 @@ The robot navigates to the target choosen while avoiding any obstacle in its pat
 ## Further Improvement
 - **The robot needs to identify if there is an obstacle present on the target and avoid it.**
 - **The robot needs to avoid many targets placed together more accurately**
-- **The robots needs to identify if there is any obstacles of the starting point and avoid it**
+- **The robot needs to identify if there is any obstacles of the starting point and avoid it**
+- **The robot needs stay inside the grid** 
 
 
 ## Code 
