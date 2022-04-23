@@ -16,18 +16,22 @@
 - **A display of the map containing the robot, obstacles and the target showing robot the avoiding the obstacles to reach the target.**
 
 ## Functionality of the Code
-The code shows a simulation of robot placed on the map according to an input of co ordinates choosen by the user where the robot avoids a number of randomly placed obstacles, the number of these randomly placed obstacles are choosen by the user, the robot avoids all the obstacles till it reaches the target taht the user has choosen its co ordinates. 
+The code shows a simulation of robot placed on the map according to an input of co ordinates choosen by the user where the robot avoids a number of randomly placed obstacles, the number of these randomly placed obstacles are choosen by the user, the robot avoids all the obstacles till it reaches the target taht the user has choosen its co ordinates.  
 
-## Thought Process
+## Software versions
+- **Ubuntu : 18.4**
+- **Python : 3.6.9** 
+- **Visual studio code : 1.64.2**
 
 
 ## Flowchart
 
 
-## Supporting Files and Graphics
+## Results, Supporting Files and Graphics
+The robot navigates to the target choosen while avoiding any obstacle in its path to the target.
 
 
 ## Further Improvement
 - **The robot needs to identify if there is an obstacle present on the target and avoid it.**
-- **e robot needs to avoid many targets placed together more accurately**
+- **The robot needs to avoid many targets placed together more accurately**
 - **The robots needs to identify if there is any obstacles of the starting point and avoid it**
