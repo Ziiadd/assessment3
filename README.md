@@ -2,21 +2,21 @@
 >Implement and document a software for autonomous navigation of a simulated mobile robot towards a target within a map of randomly generated obstacles. 
 
 ### The inputs used:
-- **pos_x:** intial position x of robot
-- **pos_y:** intial position y of robot
-- **pos_z:** intial position z of robot
-- **goal_pos_x:** enter x position of the target
-- **goal_pos_y:** enter y position of the target
-- **obstacles:** number of obstacles
+- ***pos_x:*** intial position x of robot
+- ***pos_y:*** intial position y of robot
+- ***pos_z:*** intial position z of robot
+- ***goal_pos_x:*** enter x position of the target
+- ***goal_pos_y:*** enter y position of the target
+- ****obstacles:*** number of obstacles
 
 ## Expected Outputs
 - **The distance between the robot and the target.**
 - **The angle between the robot and the target.**
-- **Co ordinates of randomly placed targets.**
+- **Coordinates of randomly placed targets.**
 - **A display of the map containing the robot, obstacles and the target showing robot the avoiding the obstacles to reach the target.**
 
 ## Functionality of the Code
-The code shows a simulation of robot placed on the map according to an input of co ordinates choosen by the user where the robot avoids a number of randomly placed obstacles, the number of these randomly placed obstacles are choosen by the user, the robot avoids all the obstacles till it reaches the target taht the user has choosen its co ordinates.  
+The code shows a simulation of robot placed on the map according to an input of coordinates choosen by the user where the robot avoids a number of randomly placed obstacles. The number of these randomly placed obstacles is choosen by the user. The robot avoids all the obstacles till it reaches the target that the user has choosen its coordinates.  
 
 ## Software versions
 - **Ubuntu : 18.4**
@@ -36,8 +36,8 @@ The code shows a simulation of robot placed on the map according to an input of 
 ## Further Improvement
 - **The robot needs to identify if there is an obstacle present on the target and avoid it.**
 - **The robot needs to avoid many targets placed together more accurately**
-- **The robot needs to identify if there is any obstacles of the starting point and avoid it**
-- **The robot needs stay inside the grid** 
+- **The robot needs to identify if there is any obstacles on the starting point and avoid it**
+- **The robot needs stay inside the grid since it can exit the grid sometimes** 
 - **Draw a line path for the robot where the line path avoids the obstacles and reachs the target**
 
 
